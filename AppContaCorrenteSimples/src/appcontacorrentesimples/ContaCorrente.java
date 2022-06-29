@@ -10,8 +10,7 @@ public class ContaCorrente {
     private float saldo;
 
     public ContaCorrente() {
-
-    }
+    };
 
     public ContaCorrente(String numeroConta, Pessoa titular) {
         this.numeroConta = numeroConta;
@@ -38,8 +37,9 @@ public class ContaCorrente {
         return saldo;
     }
 
-    public void deposito(float valor) {
+    public float deposito(float valor) {
         saldo += valor;
+        return saldo;
     }
 
     public boolean saque(float valor) {
@@ -64,7 +64,7 @@ public class ContaCorrente {
         }
         return "Banco Furta-mil \n"
                 + mascaraData.format(dataHoje) + "  Conta nº " + numeroConta
-                + "\n Titular: " + dadosTitular;
+                + "\n Titular: " + dadosTitular + "\nSaldo: " + saldo;
 
     }
 }
